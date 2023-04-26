@@ -77,6 +77,17 @@ The function then returns the size of the argument. If no size was specified, th
 
 
 
+***********get_precision.c***********
+
+This function get_precision takes a formatted string, an integer pointer i and a variable argument list list as input and returns the precision for printing.
+
+The function first initializes a local variable curr_i to the value of *i + 1 and a local variable precision to -1. It then checks if the character at format[curr_i] is a period (.). If it is not, it returns -1.
+
+If it is a period, the function initializes precision to 0 and iterates through the string starting from curr_i + 1. If the character at the current index is a digit, it multiplies precision by 10 and adds the difference between the character code of the digit and the character code of the digit 0. If the character at the current index is a star (*), the function increments curr_i and sets precision to the next argument in the variable argument list. If the character at the current index is not a digit or a star, the function breaks out of the loop.
+
+Finally, the function sets *i to curr_i - 1 and returns precision.
+
+Overall, this function is used to extract the precision value from the formatted string for printing.
 
 
 
