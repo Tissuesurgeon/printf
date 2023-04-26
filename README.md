@@ -91,3 +91,35 @@ Overall, this function is used to extract the precision value from the formatted
 
 
 
+********get_flags.c*******
+
+
+
+This function get_flags takes in a formatted string and an integer pointer i and calculates the active flags in the format specifier starting from the position i.
+
+The active flags in a format specifier are -, +, 0, #, and ' '. These flags can be used to modify the output of the format specifier. The function loops through the format specifier string, checking for each flag character in the FLAGS_CH array, and sets the corresponding flag in the flags integer variable using the bitwise OR operator.
+
+Finally, the function updates the integer pointer i to point to the last character in the flags section of the format specifier and returns the integer flags.
+
+Note that the flag values are defined as macros in the header file main.h, using bitwise shift operators to represent each flag as a unique bit in the integer value. This allows multiple flags to be combined using bitwise OR operations.
+
+
+
+
+
+***********functions2.c*************
+
+
+This is a program that defines several functions for formatting and printing text. 
+
+The functions defined include:
+
+---print_pointer: Prints the value of a pointer variable in hexadecimal format. If the pointer is NULL, prints (nil) instead. It takes in various formatting arguments such as flags, width, precision, and size to control the output.
+---print_non_printable: Prints a string and replaces non-printable characters with their ASCII codes in hexadecimal format. If the string is NULL, prints (null) instead.
+---print_reverse: Prints a string in reverse order. If the string is NULL, prints )Null( instead.
+---print_rot13string: Prints a string encoded in rot13 format. If the string is NULL, prints (AHYY) instead.
+
+Each function takes in a va_list argument named types, which is used to access additional arguments passed to the function via a variable argument list. The functions return the number of characters printed to standard output.
+
+
+
