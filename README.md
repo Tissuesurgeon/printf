@@ -39,5 +39,11 @@ The utils.c file defines several functions:
 
 --convert_size_unsgnd: a function that takes an unsigned number and a size as input and casts the number to the specified size. It returns the casted value of the number.
 
-`
+
+***********handle_print.c**************
+
+This function takes in a formatted string, a list of arguments, a buffer to handle printing, and various formatting specifications. It iterates through a list of supported format types, and if it matches the current character in the formatted string, it calls the corresponding print function to print the argument. If the current character does not match any of the supported format types, it prints the character as-is, preceded by a percent sign.
+
+The function returns the number of characters printed, or -1 if there was an error.
+
 
