@@ -22,4 +22,22 @@ The write_number function handles the printing of signed numbers. It takes the n
 
 The write_unsgnd function handles the printing of unsigned numbers. It takes the number, the output buffer, and various specifiers such as padding, width, and precision.
 
-All functions return the number of characters written.`
+All functions return the number of characters written.
+
+
+*************utils.c**************
+
+The utils.c file defines several functions:
+
+---is_printable: a function that takes a character as input and checks if it is printable. If it is, it returns 1, otherwise, it returns 0.
+
+--append_hexa_code: a function that takes an ASCII code as input and appends its hexadecimal representation to a buffer at a given index. It returns 3, which is the number of characters appended to the buffer.
+
+--is_digit: a function that takes a character as input and checks if it is a digit. If it is, it returns 1, otherwise, it returns 0.
+
+--convert_size_number: a function that takes a number and a size as input and casts the number to the specified size. It returns the casted value of the number.
+
+--convert_size_unsgnd: a function that takes an unsigned number and a size as input and casts the number to the specified size. It returns the casted value of the number.
+
+`
+
