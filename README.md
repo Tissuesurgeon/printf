@@ -47,3 +47,36 @@ This function takes in a formatted string, a list of arguments, a buffer to hand
 The function returns the number of characters printed, or -1 if there was an error.
 
 
+
+************get_width.c***********
+
+This function, get_width, takes a formatted string format, an integer pointer i, and a va_list list as arguments.
+
+It is used to calculate the width specified in the format string for printing. The function starts by initializing a variable width to 0. It then iterates over the format string starting from the position indicated by the integer pointer i and checks if each character is a digit. If it is, it multiplies width by 10 and adds the numeric value of the digit. If it encounters an asterisk (*), it gets the width from the va_list list and stops processing the format string. If it encounters any other character, it stops processing the format string and returns the current value of width.
+
+The function updates the value of i to the position of the last character it processed in the format string, and then returns the calculated width.
+
+
+
+*************get_size.c************
+
+The get_size.c  calculates the size to cast the argument based on the format specifier in the formatted string.
+
+The function takes two parameters:
+
+---format: A pointer to the formatted string.
+----i: A pointer to the index of the format specifier in the formatted string.
+
+The function returns an integer representing the size of the argument. This size is used to cast the argument to the correct type before printing.
+
+The function first increments the index i by 1 to move past the format specifier to check the next character. If the next character is an "l", it sets the size to S_LONG (which is a constant defined elsewhere in the code), indicating that the argument should be cast to a long before printing. If the next character is an "h", it sets the size to S_SHORT, indicating that the argument should be cast to a short before printing.
+
+If the next character is not an "l" or "h", the function sets i to curr_i - 1, effectively resetting it to the original index of the format specifier.
+
+The function then returns the size of the argument. If no size was specified, the function returns 0, which indicates that the argument should be printed using its default type (e.g., int for %d and %i).
+
+
+
+
+
+
