@@ -156,3 +156,19 @@ Each function takes a variable number of arguments using the va_list type from t
 The functions utilize the write() function from the unistd.h header to output characters to the standard output stream (i.e., the console).
 
 
+
+
+*****************_printf.c*******************
+
+This is a partial implementation of the _printf function in C. The _printf function is similar to the standard library printf function, which is used to print formatted output to the console.
+
+The _printf function takes in a format string, which contains a mix of plain text and format specifiers. It then iterates through the format string character by character, checking for format specifiers and handling them accordingly. It stores the output in a buffer to improve performance, which is flushed to the console when the buffer is full.
+
+The function also uses a variable argument list (va_list) to handle an arbitrary number of arguments passed in after the format string.
+
+The print_buffer function is a helper function that prints the contents of the buffer to the console and resets the buffer index to 0. This function is called at various points in the _printf function to ensure that the buffer is flushed to the console as necessary.
+
+Overall, this code provides a basic framework for implementing a printf-like function in C, but it is missing several key components, such as the get_flags, get_width, get_precision, get_size, and handle_print functions, which are responsible for parsing the format string and handling each format specifier.
+
+
+
