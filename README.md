@@ -123,3 +123,36 @@ Each function takes in a va_list argument named types, which is used to access a
 
 
 
+
+********************functions1.c************
+
+This function defines several functions for printing unsigned numbers in different formats (octal, hexadecimal, and uppercase hexadecimal). The functions take a variable number of arguments and output the corresponding number to a buffer.
+
+The main function is print_unsigned, which takes an unsigned long int and prints it as a decimal number. The function print_octal prints the number in octal notation, while print_hexadecimal and print_hexa_upper print the number in hexadecimal notation, using lowercase and uppercase letters respectively. The print_hexa function is a helper function for printing the hexadecimal format, and takes a character array map_to as an argument to map the digits of the hexadecimal number to the appropriate characters.
+
+All of the functions take the same arguments: a va_list of arguments, a buffer array to handle the print, and various flags, width, precision, and size specifiers that are used to format the output. The functions return the number of characters printed.
+
+The code also defines some macros such as UNUSED and BUFF_SIZE that are used throughout the code. Overall, this code provides a useful set of functions for printing unsigned numbers in different formats.
+
+
+
+
+******************functions.c**************
+
+
+
+This function implements several functions for printing different types of data.
+
+The functions include:
+
+----print_char: Prints a single character.
+----print_string: Prints a null-terminated string.
+----print_percent: Prints a percent sign.
+----print_int: Prints a signed integer.
+----print_binary: Prints an unsigned integer in binary format.
+
+Each function takes a variable number of arguments using the va_list type from the stdarg.h header. The other arguments to the function specify formatting options, such as the minimum width and precision of the printed output.
+
+The functions utilize the write() function from the unistd.h header to output characters to the standard output stream (i.e., the console).
+
+
